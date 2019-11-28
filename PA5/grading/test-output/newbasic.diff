@@ -1,0 +1,7 @@
+8,9c8,10
+< String
+< COOL program successfully executed
+---
+> Exception occurred at PC=0x00400618
+>   Bad address in data/stack read: 0x0000000c
+>   Exception 7  [Bad address in data/stack read]  Execution aborted

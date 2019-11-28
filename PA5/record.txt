@@ -1,0 +1,104 @@
+0->5
+1	1
+2	3
+3	4
+4	6
+5	7
+6	0
+7	2
+8	10
+9	9
+10	13
+11	20
+Main.main:
+	sw	$fp 0($sp)
+	addiu	$sp $sp -4 PUSH FP
+	sw	$s0 0($sp) 
+	addiu	$sp $sp -4 PUSH SELF
+	sw	$ra 0($sp)
+	addiu	$sp $sp -4 PUSH RA
+	addiu	$fp $sp 4  SET FP
+-------------------------------main definition begin
+	la	$a0 int_const0 LET INIT 5
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4	PUSH ACC
+--------------------------------let body
+	sw	$s0 0($sp)
+	addiu	$sp $sp -4	PUSH SELF
+	move	$a0 $s0	EXPR CODE
+	addiu	$sp $sp -4 MAKE ROOM FOR ARGUMENT
+	la	$a0 int_const1
+	sw	$a0 -4($fp)	ASSIGN CONST
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4	
+	lw	$a0 -4($fp)
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	sw	$a0 -4($fp)
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const2
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const3
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const4
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const5
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	lw	$a0 -4($fp)
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	la	$a0 int_const4
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+	addiu	$sp $sp 4
+	lw	$t1 0($sp)
+	add	$a0 $a0 $t1
+-------------------------
+	jal	Object.copy STORE ARGUEMENT
+	sw	$a0 4($sp)
+-----------------------------dispatch end
+	jal	IO.out_int
+	addiu	$sp $sp 4
+	lw	$s0 0($sp)
+----------------------------let end 
+	addiu	$sp $sp 4
+-----------------------------mian definition end
+	addiu	$sp $sp 4
+	lw	$ra 0($sp)
+	addiu	$sp $sp 4
+	lw	$s0 0($sp)
+	addiu	$sp $sp 4
+	lw	$fp 0($sp)
+	addiu	$sp $sp 0
+	jr	$ra	

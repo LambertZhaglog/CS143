@@ -1,0 +1,3 @@
+./trickyatdispatch2.test:1: wrong static dispatch about type and subType
+./trickyatdispatch2.test:1: in this method, expression type doesn't match return value
+Compilation halted due to static semantic errors.
